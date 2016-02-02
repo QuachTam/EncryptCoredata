@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation AppDelegate
 
@@ -14,6 +16,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"EncryptedCoreData.sqlite"];
+    
+    RootViewController *root = [[RootViewController alloc] init];
+    [self.window setRootViewController:root];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

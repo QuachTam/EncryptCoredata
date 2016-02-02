@@ -30,6 +30,8 @@
 		DAE48A3D5BD30FCDCA97D2AA /* libPods-EncryptedCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3B9646EB1F07388D4E374 /* libPods-EncryptedCoreData.a */; };
 		FB1699AB1C2A826B0085C97E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1699A91C2A826B0085C97E /* RootViewController.m */; };
 		FB1699AC1C2A826B0085C97E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1699AA1C2A826B0085C97E /* RootViewController.xib */; };
+		FB1699B81C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1699B51C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.m */; };
+		FB1699B91C2A90FC0085C97E /* CoreDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1699B71C2A90FC0085C97E /* CoreDataObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,10 @@
 		FB1699A81C2A826B0085C97E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		FB1699A91C2A826B0085C97E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		FB1699AA1C2A826B0085C97E /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		FB1699B41C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataObject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FB1699B51C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataObject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FB1699B61C2A90FC0085C97E /* CoreDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataObject.h; sourceTree = "<group>"; };
+		FB1699B71C2A90FC0085C97E /* CoreDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 		C3CCBB7E18804338009BD3ED /* EncryptedCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FB1699AD1C2A865B0085C97E /* CoreData */,
 				C3CCBBAB18804AE8009BD3ED /* Crypto */,
 				C3CCBBB918804AE8009BD3ED /* Random Data */,
 				C3CCBB8718804338009BD3ED /* AppDelegate.h */,
@@ -226,6 +233,17 @@
 				C3CCBBBB18804AE8009BD3ED /* DataGenerator.m */,
 			);
 			path = "Random Data";
+			sourceTree = "<group>";
+		};
+		FB1699AD1C2A865B0085C97E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FB1699B41C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.h */,
+				FB1699B51C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.m */,
+				FB1699B61C2A90FC0085C97E /* CoreDataObject.h */,
+				FB1699B71C2A90FC0085C97E /* CoreDataObject.m */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,10 +396,12 @@
 				C3CCBBBC18804AE8009BD3ED /* EncryptionTransformer.m in Sources */,
 				C3CCBB8C18804338009BD3ED /* EncryptedCoreData.xcdatamodeld in Sources */,
 				C3CCBBBE18804AE8009BD3ED /* KeychainItemWrapper.m in Sources */,
+				FB1699B91C2A90FC0085C97E /* CoreDataObject.m in Sources */,
 				C3CCBBC218804AE8009BD3ED /* DataGenerator.m in Sources */,
 				C3CCBB8918804338009BD3ED /* AppDelegate.m in Sources */,
 				FB1699AB1C2A826B0085C97E /* RootViewController.m in Sources */,
 				C3CCBBBD18804AE8009BD3ED /* NSStringEncryptionTransformer.m in Sources */,
+				FB1699B81C2A90FC0085C97E /* CoreDataObject+CoreDataProperties.m in Sources */,
 				C3CCBBBF18804AE8009BD3ED /* NSData+AES256.m in Sources */,
 				C3CCBB8518804338009BD3ED /* main.m in Sources */,
 			);

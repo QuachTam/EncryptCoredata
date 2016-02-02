@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "CoreDataObject.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface RootViewController ()
 
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +37,25 @@
 }
 */
 
+- (IBAction)actionSave:(id)sender {
+    [self.view endEditing:YES];
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        CoreDataObject *coreObject = [CoreDataObject MR_createEntityInContext:localContext];
+        coreObject.encrypted_field = self.textField.text;
+        coreObject.name = [NSString stringWithFormat:@"name: %@", self.textField.text];
+        coreObject.dateCreate = [NSDate date];
+    }];
+    
+    NSArray* cachePathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* cachePath = [cachePathArray lastObject];
+    NSLog(@"list: %@", cachePath);
+    
+    NSArray *listCoreData = [CoreDataObject MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
+    for (NSInteger index=0; index<listCoreData.count; index++) {
+        CoreDataObject *object = [listCoreData objectAtIndex:index];
+        NSLog(@"encrypt: %@", object.encrypted_field);
+        NSLog(@"name: %@", object.name);
+        NSLog(@"dateCreate: %@", object.dateCreate);
+    }
+}
 @end
